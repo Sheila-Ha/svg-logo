@@ -1,47 +1,48 @@
-const inquirer = require("inquire"); //npm special software - const variable can not be reassigned
+const inquirer = require("inquirer"); //npm special software - const variable can not be reassigned
 const fs = require("fs"); //const file system (fs) to read files on my pc 
-const generateLogo = require("./output/logo"); //require is built in function, passing location name as argument
-const { Triangle } = require("./lib/shapes");
+const Shapes = require("./lib/shapes");
 
 // TODO: prompted for Text
 const prompts = [
  
-  // TODO: enter up to 3 char
+  // TODO: enter up to 3 char 
+  //npm install inquirer-maxlength-input-prompt
   {
-    type: "input",
-    name: " ",
+    type: "maxlength-input",
+    name: "text",
     message: "Enter up to 3 characters",
+    maxLength: 3,
   },
   
-  // TODO: prompted for text color
-  {
-    type: "input",
-    name: " ",
-    message: "Text color",
-  },
+  // // TODO: prompted for text color
+  // {
+  //   type: "",
+  //   name: " ",
+  //   message: "",
+  // },
 
 // TODO: enter color keyword or hexadecimal
   {
-    type:  "input",
-    name: " ",
-    message: "Type color or hexadecimal",
+    type: "input",
+    name: "textColor",
+    message: "Enter text color or hexadecimal"
   },
-// TODO: prompted for a shape
-  // {
-  //   type: "input",
-  //   name: " ",
-  //   message: ""
-  // },
+// // TODO: prompted for a shape
+//   {
+//     type: "input",
+//     name: " ",
+//     message: ""
+//   },
 
 // TODO: presented w/ a list of shapes (cir/tri/sq)
   {
     type: "rawlist",
-    name: "shapes",
+    name: "shape",
     message: "Select a shape",
-    choices: ["Circle, Triangle, Square"],
+    choices: ["Circle", "Triangle", "Square"]
   },
 
-// TODO: prompted for shapes color
+// // TODO: prompted for shapes color
 //   {
     
 //   },
@@ -49,30 +50,53 @@ const prompts = [
 // TODO: enter color keyword or hexadecimal
   {
     type: "input",
-    name: " ",
-    message: "Type a color or hexadecimal",
-  },
+    name: "shapeColor",
+    message: "Enter a Shape color or hexadecimal"
+  }
+];
 
 // TODO: all prompts done = svg file is created named 'logo.svg'
-function writeToFile(fileName, data) { //function
+function writeToFile(fileName, data) {
+  console.log(data);
   fs.writeFileSync(fileName, data); //write file (synchronous version)
 }
 
-// TODO: output text "Generated logo.svg" is printed to command line
+function generateLogo(responses){
+  let logo;
+  // responses.shape
+  if (responses.shape == "Circle") {
+    logo = new Shapes.Circle();
+  }
+  else if (responses.shape == "Triangle") {
+    logo = new Shapes.Triangle();
+  }
+  else {  // Default to square
+    logo = new Shapes.Square();
+  }
+  
+  // Set properties of the shape
+  logo.setShapeColor(responses.shapeColor);
+  logo.setText(responses.text);
+  logo.setTextColor(responses.textColor);
 
+  return logo.createLogo();
+}
+
+
+// TODO: output text "Generated logo.svg" is printed to command line
 
 // TODO: open 'logo.svg' file in browser
 
-
 // TODO: I'm shown a 300 x 200 pixel img that matches criteria
 
-]
 
 function init () {
-  inquirer.prompt(questions).then((responses) => {   //ask questions, then proceed with responses
-    //console.log(responses);
+  inquirer.prompt(prompts).then((responses) => {   //ask questions, then proceed with responses
+    console.log(responses);
     //console.log(responses.shapes);
-    writeToFile("output/logo" , generateLogo(responses)); //write a new output file from responses using generateLogo
+    const logo = generateLogo(responses);
+    console.log(logo);
+    writeToFile("output/logo.svg", logo); //write a new output file from responses using generateLogo
     //console.log("Creating your Logo File...");
   }).catch((err) => {
     //console.log(err);
