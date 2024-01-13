@@ -1,6 +1,9 @@
 const inquirer = require("inquirer"); //npm special software - const variable can not be reassigned
+const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
 const fs = require("fs"); //const file system (fs) to read files on my pc 
 const Shapes = require("./lib/shapes");
+
+inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt);
 
 // TODO: prompted for Text
 const prompts = [
@@ -10,8 +13,8 @@ const prompts = [
   {
     type: "maxlength-input",
     name: "text",
-    message: "Enter up to 3 characters",
     maxLength: 3,
+    message: "Enter up to 3 characters:"
   },
   
   // // TODO: prompted for text color
@@ -25,7 +28,7 @@ const prompts = [
   {
     type: "input",
     name: "textColor",
-    message: "Enter text color or hexadecimal"
+    message: "Enter text color or hexadecimal:"
   },
 // // TODO: prompted for a shape
 //   {
@@ -38,7 +41,7 @@ const prompts = [
   {
     type: "rawlist",
     name: "shape",
-    message: "Select a shape",
+    message: "Select a shape:",
     choices: ["Circle", "Triangle", "Square"]
   },
 
@@ -51,15 +54,15 @@ const prompts = [
   {
     type: "input",
     name: "shapeColor",
-    message: "Enter a Shape color or hexadecimal"
+    message: "Enter a shape color or hexadecimal:"
   }
 ];
 
 // TODO: all prompts done = svg file is created named 'logo.svg'
-function writeToFile(fileName, data) {
-  console.log(data);
-  fs.writeFileSync(fileName, data); //write file (synchronous version)
-}
+// function writeToFile(fileName, data) {
+//   console.log(data);
+//   fs.writeFileSync(fileName, data); //write file (synchronous version)
+// }
 
 function generateLogo(responses){
   let logo;
@@ -92,6 +95,10 @@ function init () {
     console.log(result);
 
     // TODO: open 'logo.svg' file in browser
+    fs.open("output/logo.svg", 'r', function (err, f) {
+        console.log('opened file');
+        console.log(err);
+    });
 
     // TODO: I'm shown a 300 x 200 pixel img that matches criteria
 
