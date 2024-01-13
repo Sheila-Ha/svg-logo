@@ -82,21 +82,21 @@ function generateLogo(responses){
   return logo.createLogo();
 }
 
-
-// TODO: output text "Generated logo.svg" is printed to command line
-
-// TODO: open 'logo.svg' file in browser
-
-// TODO: I'm shown a 300 x 200 pixel img that matches criteria
-
-
 function init () {
   inquirer.prompt(prompts).then((responses) => {   //ask questions, then proceed with responses
     console.log(responses);
     //console.log(responses.shapes);
-    const logo = generateLogo(responses);
-    console.log(logo);
-    writeToFile("output/logo.svg", logo); //write a new output file from responses using generateLogo
+    
+    // TODO: output text "Generated logo.svg" is printed to command line
+    const result = generateLogo(responses);
+    console.log(result);
+
+    // TODO: open 'logo.svg' file in browser
+
+    // TODO: I'm shown a 300 x 200 pixel img that matches criteria
+
+    // console.log(logo);
+    // writeToFile("output/logo.svg", logo); //write a new output file from responses using generateLogo
     //console.log("Creating your Logo File...");
   }).catch((err) => {
     //console.log(err);
