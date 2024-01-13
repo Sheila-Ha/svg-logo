@@ -95,7 +95,7 @@ function init () {
     console.log(result);
 
     // TODO: open 'logo.svg' file in browser
-    fs.open("index.html", 'r', function (err, f) {
+    fs.readFile('index.html', 'r', function (err, f) {
         console.log('opened file');
         console.log(err);
     });
