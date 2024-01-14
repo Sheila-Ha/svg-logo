@@ -76,7 +76,7 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
   ![Alt text](<lib/img/generated img.png>)
    
 
-  DEMO: (https://app.screencast.com/MyRx28thX0tH2)
+  DEMO: (https://app.screencast.com/JAuNzQyCYaY8a)
 
 ## Features
 1. Testing done before I wrote my index.js    
