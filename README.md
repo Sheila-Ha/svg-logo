@@ -1,12 +1,12 @@
-# SVG-Logo Generator <!-- omit from toc -->
+# SVG Logo Generator <!-- omit from toc -->
 by Sheila Hanson ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description <!-- omit from toc -->
 - This is a Node.js command-line application that takes in user input to generate a logo and save it as an SVG file.  
 - The purpose is to generate a simple logo for my projects so that I don't have to pay a graphic designer.  
-- Node.js with the Inquire (collecting user input) and Jest (running tests) package will assist in making the function of this application come to life.  
-  - There will be a series of prompt to assist with building your logo.  
-  - Once your prompt are finished you will be able to see the SVG image in a browser.
+- Node.js with the Inquirer (collecting user input) and Jest (running tests) packages will assist in making the function of this application come to life.  
+  - There will be a series of prompts to assist with building your logo.  
+  - Once your prompts are finished you will be able to see the SVG image in a browser.
 
 ## Table of Contents <!-- omit from toc -->
   
@@ -26,13 +26,13 @@ by Sheila Hanson ![Github license](https://img.shields.io/badge/license-MIT-blue
 
 ## Installation
   - Go to proper file path and in the command line type <npm …. > to install each package  
-  - npx jest = npm i -D jest  
-  - Inquirer = npm I  
-    * These packages will be invoked after you have entered <node index.js> into the command line  
+    - npx jest = npm i -D jest  
+    - Inquirer = npm i inquirer@8.2.4  
+    * These packages will be installed after you have entered <node index.js> into the command line  
   - File structure recommended  
-    * In addition to files below it is highly encouraged to add an "output" folder for the newly created svg file to go  
-    * Also added was an html folder with a simple boiler plate It was made to hold img src to output our logo for viewing in the browser
-    
+    * Added an "output" folder for the newly created svg file to go  
+    * Also added was an html folder with a simple boiler plate. It was made to hold img src to output our logo for viewing in the browser
+    ![Alt text](lib/img/structure.png)
   
   ### User Story
 * AS a freelance web developer  
@@ -64,13 +64,14 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
   [My Wireframe](https://www.tldraw.com/s/v2_c_lU8V-UQa763Mdz6pzD1n1?viewport=-1141,-63,3062,1380&page=page:page)
       
 ## Usage 
-  - Node.js with the Inquire (collecting user input) and Jest (running tests) package will assist in making the function of this application come to life.  
+  - Node.js with the Inquire (collecting user input) and Jest (running tests) packages will assist in making the function of this application come to life.  
   
   - There will be a series of prompt to assist with building your logo.
   ![Alt text](<lib/img/1st prompt.png>)
-  - Your terminal your responses are in red and in {green is the confirmations of what it is outputting} followed by "Generated logo.svg" confirmation
+  - In your terminal, your responses are in red. In "{}" green text is the confirmation of what it is outputting followed by "Generated logo.svg" confirmation
+
   ![Alt text](<lib/img/2nd end resultpng.png>)
-  - Once your prompt are finished you will be able to view the SVG image in a browser.
+  - Once your prompts are finished you will be able to view the SVG image in a browser.
   ![Alt text](<lib/img/generated img.png>)
    
 
@@ -81,7 +82,7 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 2. Including a wireframe
 
 ## Challenges
-- My biggest challenge to over come was writing the testing.  
+- My biggest challenge to overcome was writing the testing.  
   1. Figuring out the correct syntax to use in the shapes.test.js  
   2. Learning to understand the errors and how to overcome them, many trial and errors to get the end result  
 - A couple of examples are:  
