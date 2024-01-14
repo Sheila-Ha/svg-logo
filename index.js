@@ -1,14 +1,13 @@
 const inquirer = require("inquirer"); //npm special software - const variable can not be reassigned
-const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt') //added package to prompt the maxlength for 3 char prompt
+const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt') //added package to set the maxlength for 3 char prompt
 const fs = require("fs"); //const file system (fs) to read files on my pc 
 const Shapes = require("./lib/shapes"); 
 
-inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt);  //setting max
+inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt);  //setting maxlength
 
-// prompted for input to messages
+// prompted for input for svg
 const prompts = [ //inquirer prompts I've added
- 
-    //npm installed inquirer-maxlength-input-prompt
+  //npm installed inquirer-maxlength-input-prompt
   {
     type: "maxlength-input",
     name: "text",
@@ -67,7 +66,7 @@ function init () {
     const result = generateLogo(responses);
     console.log(result);
 
-    // open 'logo.svg' file in browser
+    // open 'logo.svg' file in browser via 'index.html'
     fs.readFile('index.html', 'r', function (err, f) {
         console.log('opened file');
         console.log(err);

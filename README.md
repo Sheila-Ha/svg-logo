@@ -110,7 +110,7 @@ This project is licensed under MIT
 ## Testing   
 - By using npx jest to run tests I can verify
   * I am testing for correct functionality within the shape classes  
-  * The output is matching my input
+  * The input is matching my output
 
     
 
