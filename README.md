@@ -68,14 +68,15 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
   
   - There will be a series of prompt to assist with building your logo.
   ![Alt text](<lib/img/1st prompt.png>)
-  - In your terminal, your responses are in red. In "{}" green text is the confirmation of what it is outputting followed by "Generated logo.svg" confirmation
+  - In your terminal, your responses are in red.  
+  - When all the prompts are completed a confirmation "Generated logo.svg" will be displayed at the bottom.
 
   ![Alt text](<lib/img/2nd end resultpng.png>)
   - Once your prompts are finished you will be able to view the SVG image in a browser.
   ![Alt text](<lib/img/generated img.png>)
    
 
-  DEMO: (https://app.screencast.com/XgO5YgKEcLGg3)
+  DEMO: (https://app.screencast.com/MyRx28thX0tH2)
 
 ## Features
 1. Testing done before I wrote my index.js    
@@ -84,10 +85,7 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 ## Challenges
 - My biggest challenge to overcome was writing the testing.  
   1. Figuring out the correct syntax to use in the shapes.test.js  
-  2. Learning to understand the errors and how to overcome them, many trial and errors to get the end result  
-- A couple of examples are:  
-	1. Not realizing I needed an html file to output the image in the browser, stumped me for a bit.  
-  2. Index.js - I had <fs.open> syntax to open logo.svg file in browser. Needed <fs.readFile>  
+  2. Learning to understand the errors and how to overcome them, many trial and errors to get the end result   
 
 ## Contributing
 [NPM](https://www.npmjs.com/package/inquirer/v/8.2.4?activeTab=readme#installation)  
