@@ -61,18 +61,16 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
     
   
   ### Wireframe
-  [My Wireframe](https://www.tldraw.com/s/v2_c_lU8V-UQa763Mdz6pzD1n1?viewport=-1141,-63,3062,1380&page=page:page)
+  ![Alt text](<lib/img/svg-logo wireframe.png>)
       
 ## Usage 
   - Node.js with the Inquire (collecting user input) and Jest (running tests) packages will assist in making the function of this application come to life.  
-  
-  - There will be a series of prompt to assist with building your logo.
+  - There will be a series of prompt to assist with building your logo.  
   ![Alt text](<lib/img/1st prompt.png>)
   - In your terminal, your responses are in red.  
-  - When all the prompts are completed a confirmation "Generated logo.svg" will be displayed at the bottom.
-
+  - When all the prompts are completed a confirmation "Generated logo.svg" will be displayed at the bottom.  
   ![Alt text](<lib/img/2nd end resultpng.png>)
-  - Once your prompts are finished you will be able to view the SVG image in a browser.
+  - Once your prompts are finished you will be able to   view the SVG image in a browser.
   ![Alt text](<lib/img/generated img.png>)
    
 
